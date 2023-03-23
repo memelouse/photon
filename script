@@ -1,8 +1,7 @@
-if getgenv().PhotonLoaded then return print("Already Injected!") end
-
 if not game:IsLoaded() then
-	game.Loaded:Wait()
+game.Loaded:Wait()
 end
+if getgenv().PhotonLoaded then return print("Already Injected!") end
 
 if getgenv().Photon then
     script_key = getgenv().Photon.Options.Key
