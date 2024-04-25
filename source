@@ -717,9 +717,14 @@ end
 
 -- // Splits The Gun Name And Splits []
 Script.Functions.GetGunName = function(Name)
-    local split = string.split(string.split(Name, "[")[2], "]")[1]
-    return split
+    if string.find(Name, "%[") and string.find(Name, "%]") then
+        local split = string.split(string.split(Name, "[")[2], "]")[1]
+        return split
+    else
+        return Name
+    end
 end
+
 
 -- // Gets Current Gun
 Script.Functions.GetCurrentWeaponName = function()
